@@ -5,7 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const dev = process.env.NODE_ENV !== 'production';
 
 module.exports = {
-  target: 'web',
+  target: 'electron-main',
   mode: 'development',
   devtool: 'source-map',
   entry: './src/index.js',

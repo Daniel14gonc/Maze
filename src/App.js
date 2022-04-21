@@ -3,6 +3,7 @@ import { css } from '@emotion/css'
 
 import Maze from './Maze.js'
 import PantallaInicial from './Pantalla.js'
+import Final from './Final.js'
 
 import fondo from '../assets/fondo.png'
 import song from '../assets/duel-of-the-fates.mp3'
@@ -16,6 +17,7 @@ const App = () => {
 
     const [maze, setMaze] = useState([])
     const [isMaze, setIsMaze] = useState(false)
+    const [final, setFinal] = useState(false)
     
     const Container1 = css`
         display: inline-block;
@@ -50,6 +52,13 @@ const App = () => {
 
     const audio = useRef(new Audio(song))
 
+    if(final){
+        audio.current.pause()
+        return (
+            <Final />
+        )
+    }
+
     if(!isMaze){
         audio.current.pause()
         return (
@@ -79,7 +88,7 @@ const App = () => {
                             height: 100vh;
                             overflowX: scroll;`}>
                 <div className = {Container1}>
-                    <Maze maze={maze} />
+                    <Maze maze={maze} final={setFinal}/>
                 </div>
             </div>
         </div>

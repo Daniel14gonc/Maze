@@ -11,7 +11,7 @@ import left from '../assets/izquierda.gif'
 import right from '../assets/derecha.gif'
 import win from '../assets/win.gif'
 
-const Maze = ({ maze }) => {
+const Maze = ({ maze, final }) => {
     if(maze.length !== 0){
         const Container = css`
         display: flex;
@@ -77,6 +77,8 @@ const Maze = ({ maze }) => {
                             x.current += 50
                             image.current = win
                             l.current++
+
+                            setTimeout(()=>{final(true)}, 3000)
                             
                             setNormal(true)
                             finish.current=true
@@ -86,7 +88,7 @@ const Maze = ({ maze }) => {
                             x.current += 50
                             image.current = right
                             l.current++
-                            
+
                             setNormal(true)
                         }
                     }
@@ -100,6 +102,8 @@ const Maze = ({ maze }) => {
                             image.current = win
                             l.current--
                             
+                            setTimeout(()=>{final(true)}, 3000)
+
                             setNormal(true)
                             finish.current=true
                         }
@@ -122,6 +126,8 @@ const Maze = ({ maze }) => {
                             image.current = win
                             k.current++
                             
+                            setTimeout(()=>{final(true)}, 3000)
+
                             setNormal(true)
                             finish.current=true
                         }
@@ -145,6 +151,8 @@ const Maze = ({ maze }) => {
                             image.current = win
                             k.current--
                             
+                            setTimeout(()=>{final(true)}, 3000)
+
                             setNormal(true)
                             finish.current=true
                         }
