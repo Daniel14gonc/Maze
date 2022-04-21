@@ -14,7 +14,7 @@ module.exports = {
   },
   devServer: {
     static: {
-      directory: 'build',
+      directory: 'dist',
     },
     compress:true,
     port: 9000,
