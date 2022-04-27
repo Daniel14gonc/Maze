@@ -47,6 +47,16 @@ const Maze = ({ maze, final }) => {
             background-repeat: no-repeat;
         `
 
+        const Goal = css`
+            width: 50px;
+            height: 50px;
+            background-size: 100% 100%;
+            padding: 0px;
+            margin: 0px;
+            background-repeat: no-repeat;
+            background-color: #f7e71b;
+        `
+
 
         //Conocer movimiento
         const [normal, setNormal] = useState(false)
@@ -196,6 +206,10 @@ const Maze = ({ maze, final }) => {
                                                     <Personaje x={x.current} y={y.current} image={image.current} end={end} direction={direction.current} />
                                                 </div>
                                             </React.Fragment>
+                                        )
+                                    } else if(algo === 'g'){
+                                        return (
+                                            <div key={j} className={Goal}></div>
                                         )
                                     }
                                     return <div key={j} className={Floor}></div>
