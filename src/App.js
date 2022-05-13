@@ -27,7 +27,7 @@ const App = () => {
 
   const dimensions = useRef(null)
 
-  const changeDimensions = (x, y) => {
+  const changeDimension = (x, y) => {
     dimensions.current = [parseInt(x, 10), parseInt(y, 10)]
     setIsMaze(true)
   }
@@ -56,7 +56,7 @@ const App = () => {
   if (!isMaze) {
     audio.current.pause()
     return (
-      <PantallaInicial change={changeDimensions} />
+      <PantallaInicial change={changeDimension} />
     )
   }
 
